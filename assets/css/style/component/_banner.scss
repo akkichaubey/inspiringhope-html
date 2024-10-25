@@ -23,6 +23,7 @@
 .banner {
   min-height: 100vh;
   position: relative;
+  background: #0f0f0b no-repeat center / cover;
   &::after {
     content: "";
     position: absolute;
@@ -33,10 +34,25 @@
     background: $black-100;
     opacity: 0.6;
     mix-blend-mode: hard-light;
+    z-index: 1;
   }
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   .banner-info {
     .banner-title {
@@ -102,6 +118,76 @@
           bottom: 21px;
           border: 3px solid rgba($white, 0.2);
           @extend .brd-155;
+        }
+      }
+    }
+  }
+  &.inner-banner {
+    min-height: initial;
+    padding: get-vw(180px, 430px) 0 get-vw(80px, 210px);
+    .breadcrumb {
+      padding-top: get-vw(20px, 32px);
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -33px;
+        @include breakpoint(max, $media-md) {
+          margin: 0 -15px;
+        }
+        li {
+          padding: 0 33px;
+          position: relative;
+          color: $white;
+          font-size: 20px;
+          line-height: 1;
+          font-weight: 500;
+          @include breakpoint(max, $media-md) {
+            padding: 0 15px;
+            font-size: 18px;
+          }
+          a {
+            color: currentColor;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              color: $primary;
+            }
+          }
+          &:not(:last-child) {
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              height: 18px;
+              width: 1px;
+              background: $white;
+              margin: auto 0;
+              @include breakpoint(max, $media-md) {
+                height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .banner-info {
+      position: relative;
+      .shape {
+        max-width: get-vw(100px, 209px);
+        position: absolute;
+        top: -25px;
+        left: -80px;
+        @include breakpoint(max, $media-md) {
+          top: -33px;
+          left: -40px;
+        }
+        @include breakpoint(max, $media-sm) {
+          top: -28px;
+        }
+        img {
+          -webkit-animation: rotate 7s normal linear infinite;
+          animation: rotate 7s normal linear infinite;
         }
       }
     }

@@ -1054,6 +1054,7 @@ button:focus {
 .banner {
   min-height: 100vh;
   position: relative;
+  background: #0f0f0b no-repeat center/cover;
 }
 .banner::after {
   content: "";
@@ -1065,10 +1066,25 @@ button:focus {
   background: #2d5195;
   opacity: 0.6;
   mix-blend-mode: hard-light;
+  z-index: 1;
+}
+.banner .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.banner .bg-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .banner .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .banner .banner-info .banner-title {
   color: #fff;
@@ -1138,6 +1154,83 @@ button:focus {
   right: -21px;
   bottom: 21px;
   border: 3px solid rgba(255, 255, 255, 0.2);
+}
+.banner.inner-banner {
+  min-height: initial;
+  padding: clamp(180px, 22.3958333333vw, 430px) 0 clamp(80px, 10.9375vw, 210px);
+}
+.banner.inner-banner .breadcrumb {
+  padding-top: clamp(20px, 1.6666666667vw, 32px);
+}
+.banner.inner-banner .breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -33px;
+}
+@media (max-width: 991px) {
+  .banner.inner-banner .breadcrumb ul {
+    margin: 0 -15px;
+  }
+}
+.banner.inner-banner .breadcrumb ul li {
+  padding: 0 33px;
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 500;
+}
+@media (max-width: 991px) {
+  .banner.inner-banner .breadcrumb ul li {
+    padding: 0 15px;
+    font-size: 18px;
+  }
+}
+.banner.inner-banner .breadcrumb ul li a {
+  color: currentColor;
+  transition: all 0.3s ease-in-out;
+}
+.banner.inner-banner .breadcrumb ul li a:hover {
+  color: #c84c8a;
+}
+.banner.inner-banner .breadcrumb ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 18px;
+  width: 1px;
+  background: #fff;
+  margin: auto 0;
+}
+@media (max-width: 991px) {
+  .banner.inner-banner .breadcrumb ul li:not(:last-child)::after {
+    height: 16px;
+  }
+}
+.banner.inner-banner .banner-info {
+  position: relative;
+}
+.banner.inner-banner .banner-info .shape {
+  max-width: clamp(100px, 10.8854166667vw, 209px);
+  position: absolute;
+  top: -25px;
+  left: -80px;
+}
+@media (max-width: 991px) {
+  .banner.inner-banner .banner-info .shape {
+    top: -33px;
+    left: -40px;
+  }
+}
+@media (max-width: 767px) {
+  .banner.inner-banner .banner-info .shape {
+    top: -28px;
+  }
+}
+.banner.inner-banner .banner-info .shape img {
+  animation: rotate 7s normal linear infinite;
 }
 
 .about-wrap {

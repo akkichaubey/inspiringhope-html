@@ -10,7 +10,10 @@
     <?php include("include/header.php"); ?>
     <!--Header End-->
     <!-- banner -->
-    <div class="banner hero-banner" style="background-image: url(./assets/images/banner-bg.webp);">
+    <div class="banner hero-banner">
+        <div class="bg-image">
+            <img src="assets/images/banner-bg.webp" alt="img" width="" height="">
+        </div>
         <div class="container">
             <div class="row gap-x-30 align-items-center">
                 <div class="col-lg-6">
