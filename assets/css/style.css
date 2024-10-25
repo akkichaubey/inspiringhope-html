@@ -419,7 +419,7 @@ button:focus {
   padding-bottom: clamp(35px, 5.2083333333vw, 100px);
 }
 
-.pt-80 {
+.pt-80, .blog-wrap .pagination {
   padding-top: clamp(30px, 4.1666666667vw, 80px);
 }
 
@@ -577,6 +577,50 @@ button:focus {
 .box.blog-box .info .btn-wrap {
   padding-top: 14px;
 }
+.box.blog-box .author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  -moz-column-gap: 18px;
+       column-gap: 18px;
+  padding-top: clamp(15px, 1.1979166667vw, 23px);
+}
+.box.blog-box .author .author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.box.blog-box .author .author-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.box.blog-box .author .name-date {
+  margin: 0 -21px;
+}
+.box.blog-box .author .name-date span {
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #000c27;
+  font-weight: 400;
+  padding: 0 21px;
+  position: relative;
+}
+.box.blog-box .author .name-date span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -4px;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  border-radius: 100%;
+  background: #000c27;
+}
 
 .swiper-pagination {
   display: flex;
@@ -596,6 +640,35 @@ button:focus {
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   border-color: #c84c8a;
   background: transparent;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination ul {
+  display: inline-flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+}
+.pagination ul li {
+  display: inline-flex;
+}
+.pagination ul li a {
+  font-size: clamp(16px, 1.0416666667vw, 20px);
+  display: grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  color: #000c27;
+  background: #ebebeb;
+  transition: all 0.3s ease-in-out;
+}
+.pagination ul li a:is(:hover, .current) {
+  color: #fff;
+  background: #c84c8a;
 }
 
 .header-wrap {
@@ -1499,10 +1572,16 @@ button:focus {
 }
 
 .testimonial-box {
-  padding: 28px 58px 40px 32px;
+  padding: 28px 58px 25px 32px;
   border: 1px solid #e3a2c2;
   background: #fff9fb;
   border-radius: clamp(40px, 6.7708333333vw, 130px) 0 clamp(40px, 6.7708333333vw, 130px) 0;
+}
+.testimonial-box p {
+  font-size: clamp(18px, 1.3541666667vw, 26px);
+  line-height: 1.615;
+  letter-spacing: -0.6px;
+  font-weight: 600;
 }
 .testimonial-box .icon-box {
   display: inline-flex;
@@ -1527,10 +1606,6 @@ button:focus {
   height: auto;
 }
 .testimonial-box.large p {
-  font-size: clamp(18px, 1.3541666667vw, 26px);
-  line-height: 1.615;
-  letter-spacing: -0.6px;
-  font-weight: 600;
   max-width: 590px;
   text-align: center;
   margin: 0 auto;
@@ -1562,6 +1637,43 @@ button:focus {
 }
 .home-faq-testimonial .testimonial-content-box .title-wrap {
   padding-bottom: 5px;
+}
+
+.testimonial-wrap .testimonial-box p {
+  padding-left: 99px;
+  margin-top: -20px;
+  color: #000c27;
+}
+.testimonial-wrap .testimonial-box .name {
+  text-align: right;
+  padding-top: 30px;
+}
+.testimonial-wrap .testimonial-list ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(35px, 3.125vw, 60px);
+}
+.testimonial-wrap .testimonial-list ul li:nth-child(odd) {
+  padding-right: clamp(30px, 11.71875vw, 225px);
+}
+.testimonial-wrap .testimonial-list ul li:nth-child(odd) .testimonial-box {
+  border-color: #e3a5c4;
+  background: #fff9fb;
+  border-radius: 0 clamp(40px, 6.7708333333vw, 130px) 0 clamp(40px, 6.7708333333vw, 130px);
+}
+.testimonial-wrap .testimonial-list ul li:nth-child(odd) .testimonial-box .icon-box .icon {
+  color: #eec4d9;
+}
+.testimonial-wrap .testimonial-list ul li:nth-child(even) {
+  padding-left: clamp(30px, 11.71875vw, 225px);
+}
+.testimonial-wrap .testimonial-list ul li:nth-child(even) .testimonial-box {
+  border-color: #92a8cb;
+  background: #f2f7ff;
+  border-radius: clamp(40px, 6.7708333333vw, 130px) 0 clamp(40px, 6.7708333333vw, 130px) 0;
+}
+.testimonial-wrap .testimonial-list ul li:nth-child(even) .testimonial-box .icon-box .icon {
+  color: #b4c5df;
 }
 
 .faq-wrap .accordion {
@@ -1635,6 +1747,14 @@ button:focus {
   color: #000c27;
 }
 
+.faq-testimonials-wrap {
+  background: #fff9fc no-repeat center/cover;
+}
+.faq-testimonials-wrap .testimonial-content-box {
+  max-width: 830px;
+  margin: 0 auto;
+}
+
 .home-blog {
   position: relative;
   z-index: 1;
@@ -1685,6 +1805,26 @@ button:focus {
   }
 }
 
+.blog-wrap .blog-list > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  row-gap: 30px;
+}
+.blog-wrap .blog-list > ul > li {
+  width: 33.3333%;
+  padding: 0 15px;
+}
+@media (max-width: 991px) {
+  .blog-wrap .blog-list > ul > li {
+    width: 50%;
+  }
+}
+@media (max-width: 680px) {
+  .blog-wrap .blog-list > ul > li {
+    width: 100%;
+  }
+}
 .custom-form .form-row {
   display: flex;
   margin: 0 -15px;

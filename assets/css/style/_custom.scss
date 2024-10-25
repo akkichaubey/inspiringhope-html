@@ -192,6 +192,48 @@
         padding-top: 14px;
       }
     }
+    .author {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 18px;
+      padding-top: get-vw(15px, 23px);
+      .author-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .name-date {
+        margin: 0 -21px;
+        span {
+          display: inline-flex;
+          font-size: 16px;
+          line-height: 1.3;
+          color: $secondary;
+          font-weight: 400;
+          padding: 0 21px;
+          position: relative;
+          &:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -4px;
+            bottom: 0;
+            width: 8px;
+            height: 8px;
+            margin: auto;
+            border-radius: 100%;
+            background: $secondary;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -210,6 +252,34 @@
     &.swiper-pagination-bullet-active {
       border-color: $primary;
       background: transparent;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  ul {
+    display: inline-flex;
+    column-gap: 20px;
+    row-gap: 10px;
+    li {
+      display: inline-flex;
+      a {
+        font-size: get-vw(16px, 20px);
+        display: grid;
+        place-items: center;
+        min-width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        color: $secondary;
+        background: $smokey-grey-200;
+        transition: all 0.3s ease-in-out;
+        &:is(:hover, .current) {
+          color: $white;
+          background: $primary;
+        }
+      }
     }
   }
 }

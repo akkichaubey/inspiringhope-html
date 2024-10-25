@@ -43,3 +43,27 @@
     }
   }
 }
+
+.blog-wrap {
+  .blog-list {
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+      row-gap: 30px;
+      > li {
+        width: 33.3333%;
+        padding: 0 15px;
+        @include breakpoint(max, $media-md) {
+          width: 50%;
+        }
+        @include breakpoint(max, $media-xs) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .pagination {
+    @extend .pt-80;
+  }
+}
