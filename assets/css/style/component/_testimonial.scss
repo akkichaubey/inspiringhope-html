@@ -1,0 +1,132 @@
+.testimonial-box {
+  padding: 28px 58px 25px 32px;
+  border: 1px solid $primary-100;
+  background: $primary-300;
+  border-radius: get-vw(40px, 130px) 0 get-vw(40px, 130px) 0;
+  p {
+    font-size: get-vw(18px, 26px);
+    line-height: 1.615;
+    letter-spacing: -0.6px;
+    font-weight: 600;
+  }
+  .icon-box {
+    display: inline-flex;
+    color: $primary;
+    opacity: 0.15;
+    .icon {
+      width: get-vw(40px, 90px);
+      height: auto;
+    }
+  }
+  .name {
+    font-size: get-vw(20px, 36px);
+    font-weight: 600;
+    color: $primary;
+  }
+  &.large {
+    padding: 20px get-vw(20px, 38px) get-vw(40px, 100px);
+    border-radius: 0 get-vw(40px, 130px) 0 get-vw(40px, 130px);
+    .icon {
+      width: get-vw(70px, 126px);
+      height: auto;
+    }
+    p {
+      max-width: 590px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .name {
+      text-align: center;
+      padding-top: 28px;
+    }
+  }
+}
+
+.home-faq-testimonial {
+  background: $primary-200 no-repeat center / cover;
+  .container {
+    max-width: 1785px;
+  }
+  .title-wrap {
+    padding-bottom: 35px;
+    .sub-title {
+      padding-bottom: 22px;
+    }
+    h2 {
+      letter-spacing: -1px;
+    }
+  }
+  .testimonial-content-box {
+    @include breakpoint(min, $media-xl-min) {
+      padding-left: 48px;
+    }
+    .title-wrap {
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.testimonial-wrap {
+  .testimonial-box {
+    @include breakpoint(max, $media-sm) {
+      padding: 25px 20px;
+    }
+    .icon-box {
+      @include breakpoint(max, $media-sm) {
+        padding-bottom: 15px;
+      }
+    }
+    p {
+      color: $secondary;
+      @include breakpoint(min, $media-sm-min) {
+        padding-left: get-vw(30px, 99px);
+        margin-top: -20px;
+      }
+    }
+    .name {
+      text-align: right;
+      padding-top: 30px;
+    }
+  }
+  .testimonial-list {
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: get-vw(35px, 60px);
+      li {
+        &:nth-child(odd) {
+          @include breakpoint(min, $media-sm-min) {
+            padding-right: get-vw(30px, 225px);
+          }
+          .testimonial-box {
+            border-color: #e3a5c4;
+            background: $primary-300;
+            border-radius: 0 get-vw(40px, 130px) 0 get-vw(40px, 130px);
+            .icon-box {
+              .icon {
+                color: #eec4d9;
+              }
+            }
+          }
+        }
+      }
+      li {
+        &:nth-child(even) {
+          @include breakpoint(min, $media-sm-min) {
+            padding-left: get-vw(30px, 225px);
+          }
+          .testimonial-box {
+            border-color: #92a8cb;
+            background: #f2f7ff;
+            border-radius: get-vw(40px, 130px) 0 get-vw(40px, 130px) 0;
+            .icon-box {
+              .icon {
+                color: #b4c5df;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.team-wrap {
+  overflow: hidden;
+  .container {
+    display: flex;
+    flex-direction: column;
+    row-gap: get-vw(50px, 160px);
+  }
+  .column-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -38px;
+    row-gap: 30px;
+    @include breakpoint(max, $media-xxl) {
+      margin: 0 -20px;
+    }
+    @include breakpoint(max, $media-xl) {
+      margin: 0 -15px;
+    }
+    @include breakpoint(max, $media-md) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+    .col {
+      width: 100%;
+      flex: initial;
+      padding: 0 38px;
+      position: relative;
+      @include breakpoint(max, $media-xxl) {
+        padding: 0 20px;
+      }
+      @include breakpoint(max, $media-xl) {
+        padding: 0 15px;
+      }
+      &--left {
+        @include breakpoint(min, $media-md-min) {
+          width: 51.4%;
+        }
+      }
+      &--right {
+        @include breakpoint(min, $media-md-min) {
+          width: 48.6%;
+        }
+      }
+    }
+  }
+  .shape-circle {
+    position: absolute;
+    bottom: -98px;
+    width: get-vw(150px, 248px);
+    height: get-vw(150px, 248px);
+    background: $white;
+    background: rgba($primary-900, 0.1);
+    border-radius: 30px;
+    z-index: -1;
+    @include breakpoint(max, 1680) {
+      bottom: -70px;
+    }
+    @include breakpoint(max, 1580) {
+      bottom: -30px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: get-vw(20px, 40px);
+      left: get-vw(20px, 40px);
+      right: get-vw(20px, 40px);
+      bottom: get-vw(20px, 40px);
+      background: $white;
+      border-radius: 30px;
+    }
+  }
+  .team-img {
+    overflow: hidden;
+    padding-bottom: 107%;
+    border-radius: 0 get-vw(50px, 150px) 0 get-vw(50px, 150px);
+  }
+  .content-box {
+    .name {
+      color: $primary;
+    }
+    .designation {
+      font-weight: 600;
+      color: $secondary;
+      padding-bottom: 8px;
+    }
+    p:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+    .email {
+      color: $primary;
+      font-size: get-vw(16px, 22px);
+      font-weight: 600;
+      padding-top: 14px;
+      a {
+        color: currentColor;
+        word-break: break-all;
+      }
+    }
+  }
+  .team-section {
+    &:nth-child(odd) {
+      .shape-circle {
+        right: -68px;
+        @include breakpoint(max, 1680) {
+          right: -50px;
+        }
+        @include breakpoint(max, 1580) {
+          right: -30px;
+        }
+      }
+      .column-wrap {
+        @include breakpoint(min, $media-md-min) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+    &:nth-child(even) {
+      .shape-circle {
+        left: -68px;
+        background: rgba($dark-light, 0.1);
+        @include breakpoint(max, 1680) {
+          left: -50px;
+        }
+        @include breakpoint(max, 1580) {
+          left: -30px;
+        }
+      }
+      .team-img {
+        border-radius: get-vw(50px, 150px) 0 get-vw(50px, 150px) 0;
+      }
+    }
+  }
+}

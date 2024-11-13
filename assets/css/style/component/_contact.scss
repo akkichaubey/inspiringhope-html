@@ -1,0 +1,63 @@
+.contact-form {
+  .wpcf7-response-output {
+    display: none;
+  }
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 600;
+      color: $dark;
+      padding-bottom: 15px;
+    }
+    .form-control {
+      font-size: get-vw(16px, 20px);
+      line-height: 1.3;
+      height: get-vw(50px, 70px);
+      padding: 10px get-vw(20px, 30px);
+      border: 2px solid #bebebe;
+      color: $secondary;
+      border-radius: 10px;
+      @include placeholder {
+        opacity: 1;
+        color: #bebebe;
+      }
+    }
+    textarea.form-control {
+      height: 158px !important;
+    }
+  }
+  .btn {
+    min-width: initial;
+  }
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    row-gap: 26px;
+    .col {
+      width: 100%;
+      padding: 0 15px;
+      flex: initial;
+      &.col-50 {
+        @include breakpoint(min, $media-xs-min) {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+.home-newsletter {
+  .newsletter {
+    .title-wrap {
+      padding-bottom: get-vw(20px, 54px);
+      .sub-text {
+        max-width: 518px;
+        padding-top: 12px;
+      }
+    }
+  }
+}

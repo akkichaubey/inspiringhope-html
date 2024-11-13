@@ -1,0 +1,280 @@
+.home-blog {
+  position: relative;
+  z-index: 1;
+  .shape {
+    position: absolute;
+    right: get-vw(15px, 70px);
+    bottom: get-vw(30px, 115px);
+    z-index: -1;
+  }
+  .title-wrap {
+    .sub-text {
+      padding-top: 14px;
+      p {
+        letter-spacing: -0.5px;
+        font-weight: 600;
+        color: $secondary;
+      }
+    }
+    .btn-wrap {
+      padding-top: 27px;
+      .btn {
+        min-width: 270px;
+      }
+    }
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    row-gap: 30px;
+    @include breakpoint(max, $media-xl) {
+      margin: 0 -15px;
+    }
+    li {
+      width: 50%;
+      padding: 0 20px;
+      @include breakpoint(max, $media-xl) {
+        padding: 0 15px;
+      }
+      @include breakpoint(max, $media-xs) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.blog-wrap {
+  .blog-list {
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+      row-gap: 30px;
+      > li {
+        width: 33.3333%;
+        padding: 0 15px;
+        @include breakpoint(max, $media-md) {
+          width: 50%;
+        }
+        @include breakpoint(max, $media-xs) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .pagination {
+    @extend .pt-80;
+  }
+}
+
+.blog-single {
+  overflow: hidden;
+  .blog-img {
+    padding-bottom: 62%;
+    overflow: hidden;
+    border-radius: get-vw(20px, 60px);
+  }
+  .blog-content-box {
+    padding-top: 23px;
+    :is(p, li) {
+      font-size: 18px;
+      margin: 0 0 23px;
+      color: #020a15;
+      @include breakpoint(max, $media-sm) {
+        font-size: 15px;
+      }
+    }
+    img {
+      width: 100%;
+      margin: 30px 0;
+      border-radius: get-vw(20px, 60px);
+      @include breakpoint(max, $media-sm) {
+        margin: 20px 0;
+      }
+    }
+    :is(h1, h2, h3, h4, h5, h6, ul, ol) {
+      margin: 36px 0;
+      @include breakpoint(max, $media-sm) {
+        margin: 15px 0 10px;
+      }
+    }
+    :is(p, img, h1, h2, h3, h4, h5, h6, ol, ul):first-child {
+      padding-top: 0;
+      margin-top: 0;
+    }
+    :is(p, img, h1, h2, h3, h4, h5, h6, ol, ul):last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    :is(p, h1, h2, h3, h4, h5, h6, ol, ul) + img {
+      margin-top: 0px;
+    }
+    img + :is(h1, h2, h3, h4, h5, h6, ol, ul) {
+      margin-top: 0;
+    }
+    h3 {
+      font-size: get-vw(24px, 42px);
+      line-height: 1.19;
+    }
+    h4 {
+      font-size: get-vw(20px, 28px);
+      padding-left: 15px;
+    }
+    .qoute-box {
+      padding: get-vw(25px, 56px) get-vw(20px, 116px);
+      text-align: center;
+      background: rgba($primary-900, 0.1);
+      border-radius: get-vw(25px, 80px) 0 get-vw(25px, 80px) 0;
+      margin-bottom: get-vw(25px, 40px);
+      p {
+        font-size: get-vw(22px, 32px);
+        line-height: 1.5625;
+        font-weight: 600;
+        color: $secondary;
+        font-style: italic;
+        letter-spacing: -0.8px;
+      }
+    }
+  }
+}
+
+.leave-comment {
+  padding-top: get-vw(30px, 52px);
+  h3 {
+    font-size: get-vw(18px, 28px);
+    font-weight: 600;
+    line-height: 0.928;
+    padding-bottom: get-vw(25px, 64px);
+  }
+  .input-box {
+    .form-control {
+      font-size: 18px;
+      line-height: 1.44;
+      border: 0;
+      width: 100%;
+      padding: 8px 20px;
+      border-bottom: 1px solid $secondary;
+      height: 45px;
+      @include placeholder {
+        opacity: 1;
+        color: $secondary;
+      }
+    }
+  }
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    row-gap: get-vw(30px, 56px);
+    .col {
+      flex: initial;
+      padding: 0 20px;
+      width: 100%;
+      &.col-50 {
+        @include breakpoint(min, $media-xs-min) {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  .item {
+    h3 {
+      font-size: get-vw(26px, 40px);
+      color: $secondary;
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+    &.recent {
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          display: flex;
+          + li {
+            border-top: 1px solid #ccced4;
+          }
+          .post-box {
+            display: flex;
+            align-items: center;
+            padding: get-vw(15px, 20px) 0;
+            .img-box {
+              flex-shrink: 0;
+              width: get-vw(100px, 150px);
+              padding-bottom: 20.59%;
+              border-radius: 10px;
+              overflow: hidden;
+              min-height: 80px;
+            }
+            h3 {
+              font-size: get-vw(16px, 22px);
+              line-height: 1.4545;
+              font-weight: 600;
+              color: $secondary;
+              padding: 0 0 0 get-vw(15px, 20px);
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+    &.help-box {
+      color: $white;
+      padding: get-vw(25px, 45px) get-vw(20px, 50px) get-vw(25px, 56px);
+      border-radius: 15px;
+      box-shadow: none;
+      background: #255197;
+      z-index: 1;
+      border-radius: get-vw(30px, 60px) 0 get-vw(30px, 60px) 0;
+      overflow: hidden;
+
+      img {
+        opacity: 0.2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #c74c89;
+        opacity: 0.98;
+        mix-blend-mode: hard-light;
+        z-index: -1;
+      }
+      h3 {
+        font-size: get-vw(24px, 40px);
+        line-height: 1.3;
+        letter-spacing: -1px;
+        color: $white;
+        padding-bottom: 12px;
+      }
+      p {
+        font-size: get-vw(16px, 18px);
+        line-height: 1.44;
+      }
+      .btn-wrap {
+        padding-top: get-vw(20px, 30px);
+        .btn {
+          min-width: get-vw(200px, 270px);
+        }
+      }
+    }
+  }
+}

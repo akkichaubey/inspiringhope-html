@@ -1,0 +1,22 @@
+.video-wrap {
+  overflow: hidden;
+  .video-box {
+    position: relative;
+    .video {
+      padding-bottom: 41.6%;
+      min-height: 200px;
+      overflow: hidden;
+      border-radius: get-vw(30px, 100px);
+      position: relative;
+    }
+    .shape {
+      position: absolute;
+      right: -7.5%;
+      bottom: -13.2%;
+      z-index: -1;
+      img {
+        max-width: get-vw(300px, 492px);
+      }
+    }
+  }
+}

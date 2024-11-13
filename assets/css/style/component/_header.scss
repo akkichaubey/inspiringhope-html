@@ -1,0 +1,313 @@
+.header-wrap {
+  position: relative;
+  z-index: 99;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @extend .transition;
+    .head-top {
+      padding: get-vw(8px, 12px) 0;
+      background: rgba($white, 0.2);
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 30px;
+        .contact-info {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: get-vw(20px, 34px);
+            li {
+              display: inline-flex;
+              a {
+                display: inline-flex;
+                align-items: center;
+                font-size: 16px;
+                line-height: 1;
+                letter-spacing: -0.4px;
+                font-weight: 500;
+                color: $white;
+                column-gap: 15px;
+                span {
+                  @include breakpoint(max, $media-xxl) {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .social {
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 24px;
+          li {
+            display: inline-flex;
+            a {
+              color: $white;
+              display: inline-flex;
+            }
+          }
+        }
+      }
+    }
+    .head-bottom {
+      padding: get-vw(10px, 20px) 0;
+      border-bottom: 1px solid rgba($grey-100, 0.2);
+      @extend .transition;
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .logo {
+      max-width: 70px;
+      flex-shrink: 0;
+      @extend .transition;
+      @include breakpoint(min, $media-lg-min) {
+        max-width: get-vw(80px, 116px);
+      }
+      @include breakpoint(max, $media-lg) {
+        max-width: 60px;
+      }
+    }
+    .menu-toggle {
+      @include breakpoint(min, $media-lg-min) {
+        display: none;
+      }
+      button {
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: $white;
+      }
+    }
+    .header-menu {
+      width: 100%;
+      @include breakpoint(min, $media-lg-min) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: get-vw(20px, 50px);
+      }
+      @include breakpoint(min, $media-xxl-min) {
+        padding-left: get-vw(30px, 120px);
+      }
+      @include breakpoint(max, $media-lg) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        min-height: 100vh;
+        background: $white;
+        width: 320px;
+        padding: 45px 15px 80px;
+        transition: all 0.3s ease-in-out;
+      }
+      @include breakpoint(max, $media-sm) {
+        width: 300px;
+      }
+      .menu-toggle {
+        @include breakpoint(max, $media-lg) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          padding: 11px 15px;
+          button {
+            display: inline-flex;
+            color: $secondary;
+          }
+        }
+      }
+      .menu-arrow {
+        color: $white;
+        .icon {
+          transition: all 0.3s ease-in-out;
+          transform: rotate(90deg);
+        }
+        @include breakpoint(max, $media-lg) {
+          cursor: pointer;
+          width: 46px;
+          height: 46px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: $secondary;
+          display: grid;
+          place-items: center;
+        }
+        &.active {
+          .icon {
+            transform: rotate(270deg);
+          }
+        }
+      }
+      .menu {
+        @include breakpoint(max, $media-lg) {
+          height: 100%;
+          overflow: auto;
+          scroll-behavior: auto !important;
+        }
+        li:is(.current-menu-item, .current-menu-parent, :hover) {
+          > a {
+            color: $primary;
+          }
+        }
+        > ul {
+          @include breakpoint(min, $media-lg-min) {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: get-vw(15px, 34px);
+          }
+          > li {
+            position: relative;
+            align-items: center;
+            display: inline-flex;
+            column-gap: 5px;
+            @include breakpoint(max, $media-lg) {
+              width: 100%;
+              flex-wrap: wrap;
+              border-top: 1px solid rgba($secondary, 0.15);
+            }
+            > a {
+              display: inline-flex;
+              font-size: get-vw(16px, 20px);
+              line-height: 1;
+              color: $white;
+              padding: 40px 0;
+              @extend .transition;
+              @include breakpoint(max, $media-lg) {
+                font-size: 16px;
+                color: $secondary;
+                display: block;
+                width: 100%;
+                padding: 15px 0;
+              }
+            }
+            .sub-menu {
+              @include breakpoint(min, $media-lg-min) {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: $white;
+                padding: 10px;
+                min-width: 320px;
+                transition: all 0.3s ease-in-out;
+              }
+              @include breakpoint(max, $media-lg) {
+                width: 100%;
+                padding: 0 10px;
+                display: none;
+              }
+              li {
+                @include breakpoint(min, $media-lg-min) {
+                  &:not(:last-child) {
+                    border-bottom: 1px solid $grey-200;
+                  }
+                }
+                @include breakpoint(max, $media-lg) {
+                  border-top: 1px solid rgba($secondary, 0.15);
+                }
+                a {
+                  font-size: 16px;
+                  line-height: 1.3;
+                  display: block;
+                  padding: 10px 0;
+                  @include breakpoint(max, $media-lg) {
+                    padding: 15px 0;
+                  }
+                  // &:not(:hover) {
+                  //   color: $secondary;
+                  // }
+                }
+              }
+            }
+            &:hover {
+              @include breakpoint(min, $media-lg-min) {
+                .menu-arrow {
+                  color: $white;
+                  .icon {
+                    transform: rotate(270deg);
+                  }
+                }
+              }
+            }
+            &:not(:hover) {
+              @include breakpoint(min, $media-lg-min) {
+                .sub-menu {
+                  opacity: 0;
+                  visibility: hidden;
+                  transform: translateY(25px);
+                }
+              }
+            }
+          }
+        }
+      }
+      .btn-wrap {
+        @include breakpoint(max, $media-lg) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 16px 15px;
+        }
+        .btn {
+          @include breakpoint(max, $media-lg) {
+            width: 100%;
+          }
+        }
+      }
+      &:not(.active) {
+        @include breakpoint(max, $media-lg) {
+          right: -320px;
+        }
+        @include breakpoint(max, $media-sm) {
+          right: -300px;
+        }
+      }
+    }
+  }
+  &.sticky {
+    header {
+      .logo {
+        max-width: 70px;
+        @include breakpoint(max, $media-lg) {
+          max-width: 60px;
+        }
+      }
+      .head-bottom {
+        padding: 0;
+        background: $secondary;
+        border-color: transparent;
+      }
+      .btn {
+        font-size: 16px;
+        padding: 15px 25px;
+      }
+      .header-menu {
+        @include breakpoint(max, $media-lg) {
+          top: 42px;
+        }
+        .menu {
+          > ul {
+            > li {
+              > a {
+                @include breakpoint(min, $media-lg-min) {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

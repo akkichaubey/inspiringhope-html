@@ -1,0 +1,47 @@
+.home-meet-team {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  .team-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 26.705%;
+    min-height: 350px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: hard-light;
+      background: $black-900;
+    }
+  }
+  .title-wrap {
+    @extend .pb-80;
+    h2 {
+      color: $white;
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  .slider-wrap {
+    .meet-team-slider {
+      overflow: initial;
+      .swiper-slide {
+        height: initial;
+        max-width: 564px;
+      }
+    }
+  }
+  .swiper-pagination {
+    position: initial;
+    padding-top: get-vw(30px, 54px);
+  }
+}

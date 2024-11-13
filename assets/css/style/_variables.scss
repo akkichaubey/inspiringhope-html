@@ -1,0 +1,108 @@
+// Override Bootstrap default variables here
+// Do not edit any of the files in /vendor/bootstrap/scss/!
+
+// Color Variables
+// Bootstrap Color Overrides
+
+$white: #fff !default;
+$gray-50: #fafafa !default;
+$gray-100: #f5f5f5 !default;
+$gray-200: #eeeeee !default;
+$gray-300: #e0e0e0 !default;
+$gray-400: #bdbdbd !default;
+$gray-500: #9e9e9e !default;
+$gray-600: #757575 !default;
+$gray-700: #616161 !default;
+$gray-800: #424242 !default;
+$gray-900: #212121 !default;
+$black: #000 !default;
+$black-light: #252926 !default;
+
+$blue: #4e73df !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #ff001e !default;
+$orange: #fd7e14 !default;
+$yellow: #f6c23e !default;
+$green: #1cc88a !default;
+$teal: #20c9a6 !default;
+$cyan: #006064 !default;
+
+// Custom Colors
+$input-border-color: #bfbfbf;
+$input-border-hover-color: #757575;
+$input-label-color: #8c87a6;
+$body-bg-color: $gray-100;
+
+$cyan-blue-100: #f8fafc;
+$soft-peach: #ededed;
+$smokey-grey: #737373;
+$smokey-grey-100: #d9d9d9;
+$smokey-grey-200: #ebebeb;
+
+$body-color: #4d4d4d !default;
+$dark-color: #1c1c1c;
+
+// scss-docs-start theme-colors-map
+$primary: #c84c8a;
+$primary-900: #c74c89;
+$primary-100: #e3a2c2;
+$primary-200: #fff9fc;
+$primary-300: #fff9fb;
+$primary-400: #fbf3f7;
+$primary-light: #cc9ad0;
+$primary-dark: #710038;
+$secondary: #000c27;
+$dark: #002359;
+$dark-light: #265297;
+
+$grey-100: #f1f1f1;
+$grey-200: #d6d6d6;
+
+$black-900: #000712;
+$black-100: #2d5195;
+
+// Brand Colors
+$brand-google: #ea4335 !default;
+$brand-facebook: #3b5998 !default;
+$brand-twitter: #1da1f2 !default;
+$brand-linkedin: #0a66c2 !default;
+$brand-instagram: #c32aa3 !default;
+$brand-github: #000000 !default;
+$brand-pinterest: #bd081c !default;
+$brand-whatsapp: #25d366 !default;
+$brand-behance: #1769ff !default;
+$brand-dribbble: #ea4c89 !default;
+$brand-youtube: #ff0000 !default;
+
+// => @media (max-width: 680px)
+$media-xs: "680";
+
+// => @media (max-width: 767px)
+$media-sm: "767";
+// => @media (max-width: 991px)
+$media-md: "991";
+// => @media (max-width: 1024px)
+$media-lg: "1024";
+// => @media (min-width: 1200px)
+$media-xl: "1200";
+// => @media (max-width: 1280px)
+$media-xxl: "1280";
+
+// => @media (min-width: 681px)
+$media-xs-min: "681";
+// => @media (min-width: 768px)
+$media-sm-min: "768";
+// => @media (min-width: 992px)
+$media-md-min: "992";
+// => @media (min-width: 1025px)
+$media-lg-min: "1025";
+// => @media (min-width: 1201px)
+$media-xl-min: "1201";
+// => @media (min-width: 1281px)
+$media-xxl-min: "1281";
+
+$font-sans: "Poppins", serif;
+
+@import "./mixins";

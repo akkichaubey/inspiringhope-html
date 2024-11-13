@@ -1,0 +1,232 @@
+html {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: auto !important;
+  scrollbar-color: $black $white;
+  scrollbar-width: thin;
+  overscroll-behavior: none;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+  font-size: get-vw(16px, 18px);
+  line-height: 1.444;
+  font-weight: 400;
+  color: $black;
+  scrollbar-color: $primary $white;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  &.pause {
+    overflow: hidden !important;
+  }
+}
+
+::selection {
+  color: $white;
+  background: $primary;
+}
+
+::-moz-selection {
+  color: $white;
+  background: $primary;
+}
+
+::-webkit-selection {
+  color: $white;
+  background: $primary;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: $body-color;
+  &:hover {
+    text-decoration: none;
+    outline: none;
+    outline-offset: 0;
+    color: $body-color;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+    outline-offset: 0;
+    color: $body-color;
+  }
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  resize: none;
+  box-shadow: none;
+  font-family: $font-sans;
+}
+
+strong {
+  font-weight: 700;
+}
+button {
+  box-shadow: none;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $secondary;
+  margin: 0;
+  font-weight: 700;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 get-vw(15px, 30px) 0;
+  letter-spacing: -0.3px;
+  &:last-of-type {
+    margin: 0;
+  }
+}
+button:focus {
+  outline: none;
+}
+.svg {
+  path {
+    @include transition(all 0.3s ease-in-out);
+  }
+}
+
+.container {
+  max-width: 1470px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.transition {
+  @include transition(all 0.3s ease-in-out);
+}
+.bullet {
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      padding-left: 30px;
+      position: relative;
+      &:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border-radius: 100%;
+        left: 5px;
+        top: 9px;
+        background: $primary;
+      }
+    }
+  }
+  ol {
+    counter-reset: item 0;
+    li {
+      padding-left: 30px;
+      position: relative;
+      margin-bottom: 12px;
+
+      &:before {
+        content: counters(item, ".") ". ";
+        counter-increment: item 1;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        display: block;
+        color: $primary;
+      }
+      ol {
+        margin-top: 12px;
+        li {
+          padding-left: 0;
+          &:before {
+            position: relative;
+            display: inline;
+          }
+        }
+        ol {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
