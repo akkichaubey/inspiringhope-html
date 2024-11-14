@@ -16,6 +16,9 @@
         color: $secondary;
         padding: 16px 18px;
         letter-spacing: -0.8px;
+        &:is(:hover, .current) {
+          color: $primary;
+        }
       }
     }
   }

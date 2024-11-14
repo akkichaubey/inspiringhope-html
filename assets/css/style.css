@@ -2736,6 +2736,9 @@ button:focus {
   padding: 16px 18px;
   letter-spacing: -0.8px;
 }
+.service-single .service-nav li a:is(:hover, .current) {
+  color: #c84c8a;
+}
 .service-single .content-box h2 {
   font-size: clamp(28px, 2.0833333333vw, 40px);
   font-weight: 600;
